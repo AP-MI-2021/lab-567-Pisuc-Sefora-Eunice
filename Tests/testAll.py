@@ -6,5 +6,5 @@ def runAllTests():
     testObiect()
     testAdaugaObiect()
     testStergeObiect()
-    testModificaObiect
-    testGetById
+    testModificaObiect()
+    testGetById()
