@@ -22,13 +22,13 @@ def testStergeObiect():
     lista = stergeObiect("1", lista)
 
     assert len(lista) == 1
-    assert getById("1") is None
-    assert getById("2") is not None
+    assert getById("1",lista) is None
+    assert getById("2", lista) is not None
 
     lista = stergeObiect("3", lista)
 
     assert len(lista) == 1
-    assert getById("2") is not None
+    assert getById("2", lista) is not None
 
 def testModificaObiect():
     lista = []
