@@ -32,11 +32,6 @@ def ordonareCrescatorDupaPret(lista):
     return sorted(lista, key = lambda x: int(getPret(x)))
 
 def sumaPreturilorPtFiecareLocatie(lista):
-    '''
-
-    :param lista:
-    :return:
-    '''
     dict = {}
     for obiect in lista:
         dict.update({obiect[4]: 0})
