@@ -21,14 +21,8 @@ def printMenu():
     print("x. Iesire")
 
 
-def uiAdaugareObiecte(lista, undoList, redoList):
+def uiAdaugareObiecte(id, nume, descriere, pret, locatie, lista, undoList, redoList):
     try:
-        id = input("Dati id-ul: ")
-        nume = input("Dati numele: ")
-        descriere = input("Dati descrierea: ")
-        pret = input("Dati pretul: ")
-        locatie = input("Dati locatia: ")
-
         rezultat = adaugaObiect(id, nume, descriere, pret, locatie, lista)
         undoList.append(lista)
         redoList.clear()
@@ -134,7 +128,12 @@ def runMenu(lista):
         optiune = input("Dati optiunea: ")
 
         if optiune == "1":
-            lista = uiAdaugareObiecte(lista, undoList, redoList)
+            id = input("Dati id-ul: ")
+            nume = input("Dati numele: ")
+            descriere = input("Dati descrierea: ")
+            pret = input("Dati pretul: ")
+            locatie = input("Dati locatia: ")
+            lista = uiAdaugareObiecte(id, nume, descriere, pret, locatie, lista, undoList, redoList)
         elif optiune == "2":
             lista = uiStergereObiect(lista, undoList, redoList)
         elif optiune == "3":

@@ -10,7 +10,7 @@ def testModificareLocatie():
     lista = adaugaObiect("2", "pix", "negru", 3, "dm", lista)
     lista = adaugaObiect("3", "penar", "mic", 15, "mall", lista)
 
-    lista = modificareLocatie(lista)
+    lista = modificareLocatie(lista, "market")
     assert getLocatie(lista[0]) == "market"
     assert getLocatie(lista[1]) == "market"
     assert getLocatie(lista[2]) == "market"
@@ -21,11 +21,11 @@ def testModificareDescriere():
     lista = adaugaObiect("2", "pix", "negru", 3, "dm", lista)
     lista = adaugaObiect("3", "penar", "mic", 15, "mall", lista)
 
-    mod = modificareDescriere(lista)
+    mod = modificareDescriere(lista, "descriere", 6)
 
-    assert len[mod] == 2
-    assert mod["mall"] == 15
-    assert mod["dm"] == 3
+    assert len(mod) == 3
+    assert mod[0][2] == "A4 descriere"
+    assert mod[2][2] == "mic descriere"
 
 
 def testPretMaximLocatie():
@@ -36,9 +36,9 @@ def testPretMaximLocatie():
 
     dict = pretMaximLocatie(lista)
 
-    assert len[dict] == 2
-    assert dict[lista["mall"]] == 15
-    assert dict[lista["dm"]] == 3
+    assert len(dict) == 2
+    assert dict["mall"] == 15
+    assert dict["dm"] == 3
 
 def testOrdonareCrescatorDupaPret():
     lista = []
@@ -49,7 +49,7 @@ def testOrdonareCrescatorDupaPret():
 
     assert getId(s_lista[0]) == "2"
     assert getId(s_lista[1]) == "1"
-    assert getId(s_lista[2]) == "15"
+    assert getId(s_lista[2]) == "3"
 
 def testSumaPreturilorPtFiecareLocatie():
     lista = []
@@ -59,7 +59,7 @@ def testSumaPreturilorPtFiecareLocatie():
 
     sum = sumaPreturilorPtFiecareLocatie(lista)
 
-    assert len[sum] == 2
+    assert len(sum) == 2
     assert sum["mall"] == 25
     assert sum["dm"] == 3
 
