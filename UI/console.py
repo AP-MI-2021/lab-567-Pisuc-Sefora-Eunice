@@ -112,14 +112,14 @@ def showAll(lista):
     for obiect in lista:
         print(toString(obiect))
 
-def ui_undo(lista, undo_list, redo_list) -> list:
+def uiUndo(lista, undo_list, redo_list) -> list:
     if len(undo_list) > 0:
         redo_list.append(lista)
         return undo_list.pop()
     return lista
 
 
-def ui_redo(lista, undo_list, redo_list) -> list:
+def uiRedo(lista, undo_list, redo_list) -> list:
     if len(redo_list) > 0:
         undo_list.append(lista)
         return redo_list.pop()

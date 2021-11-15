@@ -1,5 +1,8 @@
 from Tests.testCRUD import testAdaugaObiect, testModificaObiect, testGetById, testStergeObiect
 from Tests.testDomeniu import testObiect
+from Tests.testFunctionalitati import testModificareLocatie, testModificareDescriere, testPretMaximLocatie, \
+    testOrdonareCrescatorDupaPret, testSumaPreturilorPtFiecareLocatie
+from Tests.testUndoAndRedo import testUndoAndRedo
 
 
 def runAllTests():
@@ -8,3 +11,9 @@ def runAllTests():
     testStergeObiect()
     testModificaObiect()
     testGetById()
+    testModificareLocatie()
+    testModificareDescriere()
+    testPretMaximLocatie()
+    testOrdonareCrescatorDupaPret()
+    testSumaPreturilorPtFiecareLocatie()
+    testUndoAndRedo()
