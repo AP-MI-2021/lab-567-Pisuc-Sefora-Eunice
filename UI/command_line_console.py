@@ -1,5 +1,6 @@
+from Domain.obiect import toString
 from Logic.CRUD import adaugaObiect, stergeObiect
-from UI.console import showAll
+
 
 
 def printMenu():
@@ -24,7 +25,10 @@ def runMenuCommandLine(lista):
                 lista = stergeObiect(opt[1], lista)
             elif opt[0] == "showall":
                 showAll(lista)
-            elif optiune == "x":
-                break
             else:
-                print("Optiune gresita! Reincercati: ")
+                return
+
+def showAll(lista):
+    for obiect in lista:
+        print(toString(obiect))
+

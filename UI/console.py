@@ -4,6 +4,8 @@ from Logic.functionalitati import pretMaximLocatie, modificareLocatie, modificar
     sumaPreturilorPtFiecareLocatie
 import copy
 
+from UI.command_line_console import runMenuCommandLine
+
 
 def printMenu():
     print("1. Adaugare obiect")
@@ -106,6 +108,11 @@ def showAll(lista):
     for obiect in lista:
         print(toString(obiect))
 
+
+
+
+
+
 def uiUndo(lista, undo_list, redo_list) -> list:
     if len(undo_list) > 0:
         redo_list.append(lista)
@@ -164,6 +171,6 @@ def runMenu(lista):
         elif optiune == "a":
             showAll(lista)
         elif optiune == "x":
-            break
+            return
         else:
             print("Optiune gresita! Reincercati: ")
